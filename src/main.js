@@ -75,6 +75,37 @@ loader.load('/favicon.svg', function (data) {
   group.scale.set(scale, scale, scale);
 
   scene.add(group);
+
+
+  window.addEventListener("keydown", (e) => {
+    console.log(e.key)
+    switch (e.key) {
+      case "ArrowUp":
+        group.position.y += 15
+        break;
+
+      case "ArrowDown":
+        group.position.y -= 15
+        break;
+
+      case "ArrowRight":
+        group.position.x += 15
+        break;
+
+      case "ArrowLeft":
+        group.position.x -= 15
+        break;
+
+
+      case "r":
+        group.rotateZ(0.1)
+        break;
+
+      default:
+        break;
+    }
+  })
+
 });
 
 // ---------- 动画循环 ----------
